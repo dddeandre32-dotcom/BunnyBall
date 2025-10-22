@@ -13,12 +13,12 @@ public class Key : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-            // sets game over to true {
+        if (other.CompareTag("Player")){
+            // sets game over to true 
             gameManager.gameOver = true;
-            /creates a shockwave
+            //creates a shockwave
             Instantiate(shockwavePrefab, transform.position, Quaternion.identity);
-	//destroys key
+	        //destroys key
             Destroy(gameObject, 0.1f);
         }
     }
