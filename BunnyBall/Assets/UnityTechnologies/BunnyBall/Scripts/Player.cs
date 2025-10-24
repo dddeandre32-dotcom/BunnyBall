@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     public Transform cameraTransform;
     public GameManager gameManager;
      int x = 0;
+    public int Speed = 50;
+public int jumpforce = 400;
+
     void Update()
     {
         x = x + 1;
@@ -21,7 +24,12 @@ public class Player : MonoBehaviour
         forward.Normalize();
         right.Normalize();
         Vector3 direction = forward * moveVertical + right * moveHorizontal;
-        rb.AddForce(direction * 5);
-    }
+        rb.AddForce(direction * Speed);
 
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+              Debug.Log("Space was pressed");
+              rb.AddForce(Vector3.up * jumpforce);
+        }
+    }
 }
