@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour
 
          public void Loadlevel3()
          {
-               SceneManager.LoadScence(level3);
+               SceneManager.LoadScene(level3);
          }
 
 }
